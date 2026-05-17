@@ -34,9 +34,9 @@ d = {'a': 100, (): '9', 8.1: 'b', True: 3+4j}
 sum = 0 
 for key, value in d.items():
     # isinstace 判断类型 判断key和value是否为数字类型 (int, float) 是则加到sum中 
-    if isinstance(key, (int, float)):
+    if isinstance(key, (int, float, bool, complex)):
         sum = sum + key
-    if isinstance(value, (int, float)):
+    if isinstance(value, (int, float, bool, complex)):
         sum = sum + value
 print(sum)
 
@@ -54,6 +54,19 @@ print(sum)
 输出: True
 解释: 存在连续三个元素都是奇数的情况，即 [5, 7, 23]
 """
+lst = [1, 2, 34, 3, 4, 5, 7, 23, 12]
+count = 0
+for i in range(len(lst)):
+    if lst[i] % 2 == 1:
+        count += 1
+        if count == 3:
+            print(True)
+            break
+    else:
+        count = 0
+else:
+    print(False)
+
 
 
 
