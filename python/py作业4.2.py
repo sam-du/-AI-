@@ -32,10 +32,10 @@ print(even_square(numbers))
 """
 
 def isPalimdrone (num):
+    if num < 0:
+        return False
     s = str(num)
-    if s == s[::-1]:
-        return True
-    return False  
+    return s == s[::-1]  
 
 print(isPalimdrone(123))
 
@@ -56,9 +56,7 @@ def isArmstrong (num):
     digits = len(s)
     for i in s:
         sum = sum + int(i)**digits
-    if sum == num:
-        return True
-    return False
+    return sum == num 
 print(isArmstrong(154))
 
 
